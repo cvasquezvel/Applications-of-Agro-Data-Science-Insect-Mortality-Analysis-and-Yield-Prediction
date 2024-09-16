@@ -1,0 +1,1420 @@
+---
+title: "Aplicaciones de Agro Data Science"
+subtitle: "Análisis de mortalidad de insectos y predicción de rendimiento"
+author: "Christian R.A. Vásquez Velasco"
+institute: "InkaStats Academy"
+date: today
+format:
+  revealjs:
+    highlight-style: github
+    logo: logo inkastats sin fondo.png
+    reference-location: document
+    menu:
+      side: right
+      width: wide
+    slide-number: true
+    show-slide-number: print
+    embed-resources: true
+    self-contained: true
+    self-contained-math: true
+cache: true
+editor: visual
+---
+
+
+# Agro Data Science
+
+## La agricultura moderna {.smaller}
+
+<hr>
+
+::: incremental
+-   ![](p1.png){.absolute top="100" left="0" height="400"}
+-   ![](p2.png){.absolute top="150" left="600" height="300"}
+-   ![](p3.png){.absolute top="200" left="100" height="400"}
+-   ![](p4.png){.absolute top="250" left="400" height="400"}
+:::
+
+::: footer
+[InkaStats-Academy](https://inkastats-academy.com/)
+:::
+
+## Agro Data Science {background="#43464B" background-image="p10.png"}
+
+<hr>
+
+::: incremental
+-   ADS combina el conocimiento agronómico con las tecnologías de la información para resolver problemas en la agricultura.
+-   Abarca temas desde la recopilación y análisis de datos hasta la visualización y comunicación de resultados.
+-   Los científicos de datos agrícolas trabajan con agricultores, empresas agroindustriales, universidades y organizaciones gubernamentales para mejorar la eficiencia y la sostenibilidad de la agricultura.
+:::
+
+::: footer
+[InkaStats-Academy](https://inkastats-academy.com/)
+:::
+
+## Problemas que resuelven el ADS
+
+<hr>
+
+::: columns
+::: {.column width="50%"}
+::: incremental
+-   Gestión del riesgo climático
+-   Determinación de dosis y momento de fertilización
+-   Análisis y predicción de rendimiento
+-   Estrés hídrico
+-   Monitoreo de campos
+-   Diagnóstico de plagas y enfermedades
+:::
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="47%"}
+![](p7.png){.absolute top="200" left="550" height="400"}
+:::
+:::
+
+::: footer
+[InkaStats-Academy](https://inkastats-academy.com/)
+:::
+
+##  {background="#43464B" background-image="p11.png"}
+
+::: columns
+::: {.column width="50%"}
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="47%"}
+::: incremental
+-   Importancia del acceso a datos precisos y confiables: Estaciones meteorológicas, sensores de campo, drones y satélites.
+-   Herramientas y técnicas de análisis de datos: Visualización de datos, Clasificación y Regresión, Series temporales, Aprendizaje automático, Inteligencia artificial.
+:::
+:::
+:::
+
+::: footer
+[InkaStats-Academy](https://inkastats-academy.com/)
+:::
+
+## 
+
+::: columns
+::: {.column width="50%"}
+Desafios
+
+::: incremental
+-   Falta de acceso a datos de calidad.
+-   Cuestiones éticas y de privacidad.
+:::
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="47%"}
+Oportunidades
+
+::: incremental
+-   Mejorar la eficiencia y la sostenibilidad de la agricultura.
+-   Tomar decisiones informadas y basadas en datos.
+:::
+:::
+:::
+
+::: footer
+[InkaStats-Academy](https://inkastats-academy.com/)
+:::
+
+## R {.smaller}
+
+::: columns
+::: {.column width="50%"}
+![](R_logo.svg.png){.absolute top="100" left="50" height="400"}
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="47%"}
+::: incremental
+-   R es un lenguaje de programación utilizado en el análisis estadístico y la visualización de datos.
+-   Fue creado en 1993 por Ross Ihaka y Robert Gentleman en la Universidad de Auckland, Nueva Zelanda.
+-   R es un software libre y de código abierto.
+-   R cuenta con una gran cantidad de paquetes que se utilizan para realizar tareas específicas en el análisis de datos.
+-   R tiene una sintaxis fácil de aprender y es utilizado tanto por científicos de datos como por estadísticos, ingenieros y profesionales de negocios.
+:::
+:::
+:::
+
+## Tidyverse {.smaller}
+
+::: columns
+::: {.column width="50%"}
+![](tidyverse-logo.png){.absolute top="100" left="50" height="400"}
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="47%"}
+::: incremental
+-   Tidyverse es un conjunto de paquetes de software de análisis de datos en el lenguaje de programación R, que se utilizan para manipular, visualizar y modelar datos.
+-   Estos paquetes comparten una filosofía común y una sintaxis consistente, lo que hace que sea fácil trabajar con ellos en conjunto.
+-   Los paquetes que forman parte de Tidyverse incluyen dplyr, ggplot2, tidyr, readr, purrr, tibble, stringr, forcats, entre otros.
+:::
+:::
+:::
+
+## Tidymodels {.smaller}
+
+::: columns
+::: {.column width="50%"}
+![](tidymodels.png){.absolute top="100" left="50" height="400"}
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="47%"}
+::: incremental
+-   Tidymodels es un conjunto de paquetes de software de modelado estadístico en el lenguaje de programación R que se utilizan para construir, ajustar, validar y analizar modelos predictivos.
+-   El objetivo principal de Tidymodels es proporcionar herramientas para ayudar a los usuarios a realizar modelado estadístico de manera más eficiente y efectiva, utilizando técnicas modernas de modelado y validación..
+-   Los paquetes que forman parte de Tidymodels incluyen recipes, parsnip, yardstick, dials, infer, entre otros.
+:::
+:::
+:::
+
+# Análisis de mortalidad de insectos
+
+## Entendiendo el problema
+
+![](p17.png){.absolute top="100" left="50" height="500"}
+
+::: footer
+[Quantifying pesticide efficacy from multiple field trials](https://esj-journals.onlinelibrary.wiley.com/doi/full/10.1002/1438-390X.12019)
+:::
+
+## 
+
+::: {.fragment .fade-in}
+Las áreas de sanidad cuentan con data histórica.
+:::
+
+::: {.fragment .fade-up}
+Deben transformarla en información útil.
+:::
+
+::: {.fragment .fade-left}
+¿?
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+Predecir la mortalidad que se obtendrá en las aplicaciones futuras.
+:::
+
+------------------------------------------------------------------------
+
+```{r}
+#| include: false
+
+### Setup ----
+
+# Otras opciones
+options(scipen = 999)    # Eliminar la notación científica
+options(digits = 4)      # Número de decimales
+
+
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(readxl, agricolae, raster, car, dplyr, skimr, tidyverse, tidymodels, doParallel, parallel, psych, summarytools, gt)
+
+### Parallel process ----
+
+# speed up computation with parallel processing
+
+doParallel::registerDoParallel()
+
+ncores <- parallel::detectCores(logical = TRUE)
+registerDoParallel(cores = ncores)
+
+
+```
+
+Para ilustración se utilizará el inventario de Eficacia de plaguicidas.
+
+```{r}
+#| echo: false
+#| comment: ""
+
+archivos <- list.files(pattern = "pesticide efficacy.xlsx",
+                       full.names = TRUE,
+                       recursive = TRUE)
+
+# Importación
+data <- readxl::read_xlsx(path = archivos, sheet = "Data_summary")
+
+# Pre-procesamiento
+
+data <- data %>%
+  dplyr::select(-c(5,7,8)) %>%
+  mutate(InsectStage = factor(InsectStage),
+         Method = factor(Method),
+         Product = factor(Product)) %>%
+  filter(!is.na(Pre_Mean_Count))
+
+skimr::skim(data)
+
+```
+
+------------------------------------------------------------------------
+
+Método: método de aplicación\
+- 1 Control - 2 Insecticidas en gránulos - 3 Tratamiento de semillas - 4 Aplicación al suelo - 5 Pulverización - 6 Niebla de vapor - 7 Aplicación superficial con agua
+
+```{r}
+#| echo: false
+#| comment: ""
+
+head(data, 10)
+
+```
+
+## Partición inicial {auto-animate="true"}
+
+``` r
+split <- initial_split(data, prop = 0.70, strata = Mortality_Mean_Cor)
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+split <- initial_split(data, prop = 0.70, strata = Mortality_Mean_Cor)
+
+```
+
+## Partición inicial {auto-animate="true"}
+
+``` r
+split <- initial_split(data, prop = 0.70, strata = Mortality_Mean_Cor)
+data_train <- split %>% training()
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+data_train <- split %>% training()
+str(data_train)
+```
+
+## Partición inicial {auto-animate="true"}
+
+``` r
+split <- initial_split(data, prop = 0.70, strata = Mortality_Mean_Cor)
+data_train <- split %>% training()
+data_test <- split %>% testing()
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+data_test <- split %>% testing()
+str(data_test)
+```
+
+## Receta de preprocesamiento {auto-animate="true"}
+
+``` r
+data_rec <- recipe(formula = `Mortality_Mean_Cor` ~ .,
+                   x = data_train)
+```
+
+## Receta de preprocesamiento {auto-animate="true"}
+
+``` r
+data_rec <- recipe(formula = `Mortality_Mean_Cor` ~ .,
+                   x = data_train) %>%
+  step_select(-c(`Post_Mean_Count`))
+```
+
+## Receta de preprocesamiento {auto-animate="true"}
+
+``` r
+data_rec <- recipe(formula = `Mortality_Mean_Cor` ~ .,
+                   x = data_train) %>%
+  step_select(-c(`Post_Mean_Count`)) %>%
+  step_mutate_at(where(base::is.numeric),
+                 -contains(c("Mortality_Mean_Cor")),
+                 fn = ~log(.))
+```
+
+## Receta de preprocesamiento {auto-animate="true"}
+
+``` r
+data_rec <- recipe(formula = `Mortality_Mean_Cor` ~ .,
+                   x = data_train) %>%
+  step_select(-c(`Post_Mean_Count`)) %>%
+  step_mutate_at(where(base::is.numeric),
+                 -contains(c("Mortality_Mean_Cor")),
+                 fn = ~log(.))
+```
+
+## Receta de preprocesamiento {auto-animate="true"}
+
+``` r
+data_rec <- recipe(formula = `Mortality_Mean_Cor` ~ .,
+                   x = data_train) %>%
+  step_select(-c(`Post_Mean_Count`)) %>%
+  step_mutate_at(where(base::is.numeric),
+                 -contains(c("Mortality_Mean_Cor")),
+                 fn = ~log(.)) %>%
+  step_dummy(Method, one_hot = TRUE) %>%
+  step_dummy(Product, one_hot = TRUE) %>%
+  step_dummy(InsectStage, one_hot = TRUE)
+```
+
+## Receta de preprocesamiento {auto-animate="true"}
+
+``` r
+data_prep <- prep(data_rec)
+```
+
+## Receta de preprocesamiento {auto-animate="true"}
+
+``` r
+data_prep <- prep(data_rec)
+data_train_prep <- juice(data_prep)
+```
+
+## Receta de preprocesamiento {auto-animate="true"}
+
+``` r
+data_prep <- prep(data_rec)
+data_train_prep <- juice(data_prep)
+data_test_prep  <- bake(data_prep, new_data = data_test)
+```
+
+## Receta de preprocesamiento {auto-animate="true"}
+
+``` r
+data_prep <- prep(data_rec)
+data_train_prep <- juice(data_prep)
+data_test_prep  <- bake(data_prep, new_data = data_test)
+head(data_train_prep)
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+data_rec <- recipe(formula = `Mortality_Mean_Cor` ~ .,
+                   x = data_train) %>%
+  step_select(-c(`Post_Mean_Count`)) %>%
+  step_mutate_at(where(base::is.numeric),
+                 -contains(c("Mortality_Mean_Cor")),
+                 fn = ~log(.)) %>%
+  step_dummy(Method, one_hot = TRUE) %>%
+  step_dummy(Product, one_hot = TRUE) %>%
+  step_dummy(InsectStage, one_hot = TRUE)
+
+data_prep <- prep(data_rec)
+data_train_prep <- juice(data_prep)
+data_test_prep  <- bake(data_prep, new_data = data_test)
+head(data_train_prep)
+```
+
+## Random Forest
+
+![](p18.png){.absolute top="100" left="50" height="500"}
+
+::: footer
+[Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 2nd Edition](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/)
+:::
+
+## Definir especificaciones del modelo
+
+``` {.r code-line-numbers="1-6|7-9|10-11"}
+# Inicializar un objeto de random forest
+rf_model_spec <- rand_forest(
+  trees = tune(), 
+  min_n = tune(), 
+  mtry = tune()
+) %>% 
+  # Establecer el modelo de motor
+  set_engine('ranger',                         
+             importance = "permutation") %>% 
+  # Establecer el modo de modelo
+  set_mode('regression')
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+rf_model_spec <- rand_forest(
+  trees = tune(), 
+  min_n = tune(), 
+  mtry = tune()
+) %>% 
+  # Establecer el modelo de motor
+  set_engine('ranger',                         
+             importance = "permutation") %>% 
+  # Establecer el modo de modelo
+  set_mode('regression')
+```
+
+## Definir fórmula del modelo
+
+``` {.r code-line-numbers="1"}
+formula_rf = Mortality_Mean_Cor ~ .  
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+formula_rf = Mortality_Mean_Cor ~ .  
+```
+
+## Definir flujo de trabajo
+
+``` {.r code-line-numbers="1|2|3-4|5-6"}
+rf_wf <- workflow() %>%
+  add_recipe(data_rec) %>%
+  add_model(rf_model_spec,
+            formula = formula_rf) 
+#obtener todos los argumentos ajustables posibles en el flujo de trabajo
+tune_args(rf_wf) 
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+rf_wf <- workflow() %>%
+  add_recipe(data_rec) %>%
+  add_model(rf_model_spec,
+            formula = formula_rf) 
+#obtener todos los argumentos ajustables posibles en el flujo de trabajo
+tune_args(rf_wf)  
+```
+
+## Extraer el conjunto de hiperparámetros del modelo
+
+``` {.r code-line-numbers="1|2|3-4|5"}
+rf_params <- hardhat::extract_parameter_set_dials(rf_wf) %>% 
+  update(trees = trees(range = c(50L, 150L)))
+rf_params <- rf_params %>% 
+  dials::finalize(rf_params)
+rf_params
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+rf_params <- hardhat::extract_parameter_set_dials(rf_wf) %>% 
+  update(trees = trees(range = c(50L, 150L)))
+rf_params <- rf_params %>% 
+  dials::finalize(rf_params)
+rf_params
+```
+
+## Definir métricas del performance predictivo
+
+``` {.r code-line-numbers="1|2|3|4|5"}
+multi_met <- yardstick::metric_set(
+yardstick::rmse,
+yardstick::rsq,
+yardstick::mape,
+yardstick::mae)
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+multi_met <- yardstick::metric_set(yardstick::rmse, yardstick::rsq,
+                                   yardstick::mape, yardstick::mae)
+```
+
+## Definir esquema de validación cruzada
+
+::: columns
+::: {.column width="50%"}
+![](grid_search_cross_validation.png){.absolute top="200" left="50" height="300"}
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="47%"}
+::: incremental
+``` {.r code-line-numbers="1|2-3"}
+set.seed(234)
+data_folds <- rsample::vfold_cv(data_train,
+                                 v = 20)
+```
+:::
+:::
+:::
+
+```{r}
+#| echo: false
+#| comment: ""
+
+set.seed(234)
+data_folds <- rsample::vfold_cv(data_train,
+                                 v = 20)
+```
+
+## Búsqueda del mejor conjunto de Hiperparámtros mediante validación cruzada
+
+``` {.r code-line-numbers="1|2|3-4|5|6|7|9|10|11|12|14|15|16|17|18-20"}
+set.seed(2020)
+tictoc::tic()
+rf_tune <-
+  rf_wf %>%
+  tune_bayes(
+    resamples = data_folds,
+    param_info = rf_params,
+    # por defecto es 5 (número aleatorio de combinaciones (puntos de grilla) de hiperparámetros)
+    initial = 5, 
+    iter = 50,
+    metrics = multi_met,
+    control = control_bayes(
+      # El corte entero para el número de iteraciones sin mejores resultados.
+      no_improve = 10,
+      extract = identity,
+      save_pred = TRUE,
+      verbose = FALSE
+      )
+  )
+tictoc::toc()
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+set.seed(2020)
+tictoc::tic()
+rf_tune <-
+  rf_wf %>%
+  tune_bayes(
+    resamples = data_folds,
+    param_info = rf_params,
+    # por defecto es 5 (número aleatorio de combinaciones (puntos de grilla) de hiperparámetros)
+    initial = 5,
+    iter = 50,
+    metrics = multi_met, # metric_set(rmse,mae,smape),
+    control = control_bayes(
+      # El corte entero para el número de iteraciones sin mejores resultados.
+      no_improve = 10,
+      extract = identity,
+      save_pred = TRUE,
+      verbose = FALSE#,
+      # parallel_over = "resamples"
+    )
+  )
+tictoc::toc()
+```
+
+## Métricas del rendimiento predictivo en fase de validación cruzada
+
+```{r}
+#| echo: false
+#| comment: ""
+
+rf_tune %>%
+  collect_metrics() %>%
+  # filter(.metric == "rmse") %>%
+  select(.metric, mean, std_err, min_n, mtry, trees
+  ) %>%
+  pivot_longer(min_n:mtry:trees,
+               values_to = "value",
+               names_to = "parameter") %>%
+  ggplot(aes(value, mean, color = parameter)) +
+  geom_line(show.legend = FALSE) +
+  geom_point(show.legend = FALSE) +
+  geom_errorbar(aes(ymin = mean - std_err,
+                    ymax = mean + std_err)) +
+  facet_grid(.metric~parameter, scales = "free") +
+  labs(x = NULL, y = "RMSE")
+```
+
+## Seleccionar el mejor conjunto de hiperparámetros
+
+``` {.r code-line-numbers="1|2-3|4"}
+best_rf_model <- select_best(rf_tune, "rmse")
+final_rf <- finalize_workflow(rf_wf,
+                              best_rf_model)
+final_rf
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+best_rf_model <- select_best(rf_tune, "rmse")
+final_rf <- finalize_workflow(rf_wf,
+                              best_rf_model)
+final_rf
+```
+
+## Métricas del rendimiento predictivo para el mejor conjunto de hiperparámetros
+
+``` {.r code-line-numbers="1-2|3|4|6|7-9"}
+# Métricas promedio de todas las particiones
+metrics_rf <- 
+  rf_tune %>% 
+  collect_metrics(summarize = TRUE) %>%
+  dplyr::mutate(modelo = "rf") %>%
+  dplyr::select(-c(.estimator,.config)) %>%
+  dplyr::filter(mtry %in% best_rf_model$mtry,
+                min_n %in% best_rf_model$min_n,
+                trees %in% best_rf_model$trees)
+metrics_rf
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+# Métricas promedio de todas las particiones
+metrics_rf <- 
+  rf_tune %>% 
+  collect_metrics(summarize = TRUE) %>%
+  dplyr::mutate(modelo = "rf") %>%
+  dplyr::select(-c(.estimator,.config)) %>%
+  dplyr::filter(mtry %in% best_rf_model$mtry,
+                min_n %in% best_rf_model$min_n,
+                trees %in% best_rf_model$trees)
+metrics_rf %>% gt()
+```
+
+## Entrenamiento del modelo final
+
+``` {.r code-line-numbers="1|2|3"}
+rf_model <- final_rf %>%
+  fit(data_train) %>%
+  extract_fit_parsnip()
+rf_model
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+rf_model <- final_rf %>%
+  fit(data_train) %>%
+  extract_fit_parsnip()
+rf_model
+```
+
+## Importancia de variables
+
+```{r}
+#| echo: false
+#| comment: ""
+
+vi_rf <- 
+  rf_model %>%
+  vip::vi() %>%
+  dplyr::mutate(Sign = ifelse(Importance >= 0, "POS", "NEG"),
+    Importance = abs(Importance),
+    Variable = fct_reorder(Variable, Importance),
+    Total_Importance = sum(Importance),
+    Importance = Importance/Total_Importance) %>%
+  # dplyr::filter(!Importance == 0) %>%
+  ggplot(aes(x = Importance,
+             y = Variable,
+             fill = Sign)) +
+  geom_col() +
+  geom_text(aes(label = round(Importance,4),
+                y = Variable),
+            x = 0.1) +
+  scale_fill_manual(breaks = c("NEG","POS"),
+                    values = c("red","blue")) +
+  scale_x_continuous(expand = c(0, 0)) +
+  labs(y = NULL)
+vi_rf
+```
+
+## Testeo interno
+
+### Resumen de la predicción
+
+``` {.r code-line-numbers="1|2|3|4|7|8"}
+predicciones <- rf_model %>%
+  predict(
+    new_data = data_test_prep,
+    type = "numeric"
+  )
+  
+predicciones_rf <- predicciones %>% 
+  bind_cols(data_test_prep %>% dplyr::select(Mortality_Mean_Cor)) %>%
+  dplyr::mutate(modelo = "rf")
+
+summary(predicciones_rf)  
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+#### Testeo interno ----
+
+# PREDICCIÓN TEST ----
+# =============================================================================
+predicciones <- rf_model %>%
+  predict(
+    new_data = data_test_prep,
+    type = "numeric"
+  )
+
+# MÉTRICAS TEST ----
+# =============================================================================
+predicciones_rf <- predicciones %>% 
+  bind_cols(data_test_prep %>% dplyr::select(Mortality_Mean_Cor)) %>%
+  dplyr::mutate(modelo = "rf")
+
+summary(predicciones_rf)
+```
+
+## Testeo interno
+
+### Resumen de las métricas de predicción
+
+``` {.r code-line-numbers="1|2|3|4|5"}
+error_test_rf  <- multi_met(
+  data     = predicciones_rf,
+  truth    = Mortality_Mean_Cor,
+  estimate = .pred,
+  na_rm    = TRUE
+) %>%
+  dplyr::mutate(
+    modelo = "rf"
+  )
+error_test_rf
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+# Error de test
+
+error_test_rf  <- multi_met(
+  data     = predicciones_rf,
+  truth    = Mortality_Mean_Cor,
+  estimate = .pred,
+  na_rm    = TRUE
+) %>%
+  dplyr::mutate(
+    modelo = "rf"
+  )
+error_test_rf
+```
+
+## Testeo interno
+
+```{r}
+#| echo: false
+#| comment: ""
+
+pe1 <- ggplot(
+  data = predicciones_rf,
+  aes(x = Mortality_Mean_Cor, y = .pred)
+) +
+  geom_point(alpha = 0.3) +
+  geom_abline(slope = 1, intercept = 0, color = "firebrick") +
+  labs(title = "Valor predicho vs valor real") +
+  theme_bw()
+
+pe2 <- ggplot(
+  data = predicciones_rf,
+  aes(x = 1:nrow(predicciones_rf), y = Mortality_Mean_Cor - .pred)
+) +
+  geom_point(alpha = 0.3) +
+  geom_hline(yintercept =  0, color = "firebrick") +
+  labs(title = "Residuos del modelo",
+       x = ".row")   +
+  theme_bw()
+
+pe3 <- ggplot(
+  data = predicciones_rf,
+  aes(x = Mortality_Mean_Cor - .pred)
+) +
+  geom_density() + 
+  labs(title = "Distribución residuos del modelo") +
+  theme_bw()
+
+pe4 <- ggplot(
+  data = predicciones_rf,
+  aes(sample = Mortality_Mean_Cor - .pred)
+) +
+  geom_qq() +
+  geom_qq_line(color = "firebrick") +
+  labs(title = "Q-Q residuos del modelo") +
+  theme_bw()
+
+ggpubr::ggarrange(plotlist = list(pe1, pe2, pe3, pe4)) %>%
+  ggpubr::annotate_figure(
+    top = ggpubr::text_grob("Distribución residuos", size = 15, face = "bold")
+  )
+```
+
+# Predicción de rendimiento
+
+::: footer
+[Crop Yield Forecast in tidymodels](https://cvasquezvel.github.io/Crop-Yield-Forecast/intro.html)
+:::
+
+## Fórmulas para la proyección del rendimiento {.smaller}
+
+Debemos entender que de forma empírica, las estimaciones de cosecha se realizan en muchos cultivos teniendo en cuenta una fórmula matemática como la siguiente:
+
+$$Producción = A * DS * NOP * PO$$
+
+Dónde:
+
+A = Área
+
+DS = Densidad de siembra
+
+NOP = Número de órganos por planta
+
+PO = Peso de órganos
+
+Entendiéndose con esta fórmula que para estimar la producción por campaña de cualquier cultivo, se necesita información de la extensión de siembra, número de plantas por hectárea, número de órganos a cosechar y el peso promedio de estos órganos.
+
+##  {.smaller}
+
+Para fines logísticos, hacer una estimación de producción a nivel de campaña no ayuda mucho, ya que se necesita saber la producción en distintos puntos de corte o periodos de tiempo.
+
+Para esto último fin, podemos hacer una modificación a la ecuación, obteniendo lo siguiente:
+
+$$Producción_{(t)} = A * DS * NOP_{(t)} * PO_{(t)} * TM_{(t)}$$
+
+Dónde:
+
+A = Área
+
+DS = Densidad de siembra
+
+NOP = Número de órganos por planta
+
+PO = Peso de órganos
+
+TM = Tasa de maduración
+
+Esta última ecuación añade un modelamiento temporal, que está en función de la tasa de maduración y crecimiento de los órganos a cosechar.
+
+##  {.smaller}
+
+Entonces, para realizar Crop Yield Forecast, debemos entender que existe en el tiempo uno o más factores que condicionarán la producción en distintos puntos transversales y por ello debemos tomar datos horizontales o de series de tiempo en el cultivo, pues serán fundamentales para realizar las proyecciones. Es así, que debemos imaginar cualquier algoritmo como una función similar a esta última ecuación matemática y debemos lograr que el modelo por crear, a través del aprendizaje estadístico, cumpla con la lógica necesaria para simular este comportamiento matemático (que fue pensado para simular el comportamiento real del cultivo).
+
+## Wild Blueberry Yield Prediction {.smaller}
+
+El artículo "Wild blueberry yield prediction using a combination of computer simulation and machine learning algorithms", usa datos recolectados por 30 años en Maine (EEUU) y publicados por Wild Blueberry Pollination Model, para un modelo de simulación espacial. El modelamiento predictivo en arándanos requiere de datos con fuerte influyencia de factores espaciales (geográficos), y adicionalmente en este caso, de las plantas, especies de abejas y meteorología. Estos datos simulados son usados por investigadores para probar la calidad predictiva de sus algoritmos de aprendizaje estadístico a datos reales y datos generados por simulación. Emplearemos este conjunto de datos para entrenar modelos en el enfoque tidy.
+
+::: footer
+[Wild Blueberry Yield Prediction](https://www.kaggle.com/datasets/saurabhshahane/wild-blueberry-yield-prediction)
+:::
+
+```{r}
+#| echo: false
+#| comment: ""
+
+archivos <- list.files(pattern = "WildBlueberryPollinationSimulationData.csv",
+                       full.names = TRUE,
+                       recursive = TRUE)
+
+# Importación
+data <- read.csv(archivos, check.names = FALSE)
+
+# Pre-procesamiento
+
+data %>% descr()
+
+```
+
+## Partición inicial {auto-animate="true"}
+
+``` r
+split <- initial_split(data, prop = 0.70, strata = yield)
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+split <- initial_split(data, prop = 0.70, strata = yield)
+
+```
+
+## Partición inicial {auto-animate="true"}
+
+``` r
+split <- initial_split(data, prop = 0.70, strata = yield)
+data_train <- split %>% training()
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+data_train <- split %>% training()
+str(data_train)
+```
+
+## Partición inicial {auto-animate="true"}
+
+``` r
+split <- initial_split(data, prop = 0.70, strata = yield)
+data_train <- split %>% training()
+data_test <- split %>% testing()
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+data_test <- split %>% testing()
+str(data_test)
+```
+
+## Receta de preprocesamiento
+
+``` {.r code-line-numbers="1-2|3|4-13"}
+data_rec <- recipe(formula = `yield` ~ .,
+                   x = data_train) %>%
+  step_select(where(base::is.numeric)) %>%
+  step_mutate_at(where(base::is.numeric),
+                 -contains(c("RainingDays",
+                             "AverageRainingDays",
+                             "honeybee",
+                             "bumbles",
+                             "andrena",
+                             "osmia",
+                             "fruitset",
+                             "fruitmass")),
+                 fn = ~log(.))
+                 
+data_prep <- prep(data_rec)
+data_train_prep <- juice(data_prep)
+data_test_prep  <- bake(data_prep, new_data = data_test)
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+data_rec <- recipe(formula = `yield` ~ .,
+                   x = data_train) %>%
+  step_select(where(base::is.numeric)) %>%
+  step_mutate_at(where(base::is.numeric),
+                 -contains(c("RainingDays",
+                             "AverageRainingDays",
+                             "honeybee",
+                             "bumbles",
+                             "andrena",
+                             "osmia",
+                             "fruitset",
+                             "fruitmass")),
+                 fn = ~log(.))
+                 
+data_prep <- prep(data_rec)
+data_train_prep <- juice(data_prep)
+data_test_prep  <- bake(data_prep, new_data = data_test)
+```
+
+## Definir función para recuperar coeficientes
+
+``` {.r code-line-numbers="1|2|4|6-7"}
+get_glm_coefs <- function(x) {
+  x %>% 
+    # get the glm model object
+    extract_fit_engine() %>% 
+    # transform its format
+    broom::tidy()
+}
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+get_glm_coefs <- function(x) {
+  x %>% 
+    # get the glm model object
+    extract_fit_engine() %>% 
+    # transform its format
+    broom::tidy()
+}
+```
+
+## Definir validación cruzada
+
+``` {.r code-line-numbers="1|2-3"}
+set.seed(234)
+data_folds <- rsample::vfold_cv(data_train,
+                                 v = 20)
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+set.seed(234)
+data_folds <- rsample::vfold_cv(data_train,
+                                 v = 20)
+```
+
+## Regresión múltiple
+
+![](lm.png){.absolute top="100" left="50" height="500"}
+
+## Definir especificaciones del modelo
+
+``` {.r code-line-numbers="1-2|3-4|5-6"}
+# Inicializar un objeto de regresión lineal
+linear_model_spec <- linear_reg() %>% 
+  # Establecer el modelo de motor
+  set_engine('lm') %>% 
+  # Establecer el modo de modelo
+  set_mode('regression')
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+# Inicializar un objeto de regresión lineal
+linear_model_spec <- linear_reg() %>% 
+  # Establecer el modelo de motor
+  set_engine('lm') %>% 
+  # Establecer el modo de modelo
+  set_mode('regression')
+```
+
+## Definir fórmula del modelo
+
+``` {.r code-line-numbers="1"}
+formula_lm = yield ~ fruitmass + fruitset + seeds + osmia + andrena + bumbles +
+  MinOfUpperTRange + clonesize + AverageRainingDays + honeybee + RainingDays 
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+formula_lm = yield ~ fruitmass + fruitset + seeds + osmia + andrena + bumbles +
+  MinOfUpperTRange + clonesize + AverageRainingDays + honeybee + RainingDays 
+```
+
+## Definir flujo de trabajo
+
+``` {.r code-line-numbers="1|2|3|4"}
+lm_wf <- workflow() %>%
+  add_recipe(data_rec) %>%
+  add_model(linear_model_spec,
+            formula = formula_lm) 
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+lm_wf <- workflow() %>%
+  add_recipe(data_rec) %>%
+  add_model(linear_model_spec,
+            formula = formula_lm) 
+```
+
+## Validación cruzada
+
+``` {.r code-line-numbers="2|3|4|5|6|7|8|9|10-12"}
+tictoc::tic()
+validacion_lm <-
+  lm_wf %>%
+  fit_resamples(
+    resamples = data_folds,
+    metrics = multi_met,
+    control = control_resamples( 
+      extract = get_glm_coefs,
+      save_pred = TRUE,
+      verbose = FALSE
+    )
+  )
+tictoc::toc()
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+tictoc::tic()
+validacion_lm <-
+  lm_wf %>%
+  fit_resamples(
+    resamples = data_folds,
+    metrics = multi_met,
+    control = control_resamples( #control_grid
+      extract = get_glm_coefs, #identity
+      save_pred = TRUE,
+      verbose = FALSE#,
+      #parallel_over = "resamples"
+    )
+  )
+tictoc::toc()
+```
+
+------------------------------------------------------------------------
+
+```{r}
+#| echo: false
+#| comment: ""
+
+validacion_lm <- validacion_lm %>%
+  unnest(.predictions) %>%
+  dplyr::mutate(yield = exp(yield),
+                .pred = exp(.pred)) %>%
+  group_by(id) %>%
+  nest(`.predictions` = 6:9)
+
+lm_coefs <-
+  validacion_lm %>%
+  select(id, .extracts) %>%
+  unnest(.extracts) %>%
+  select(id, .extracts) %>%
+  group_by(id) %>%
+  dplyr::slice(1) %>%
+  ungroup() %>%
+  unnest(.extracts)
+
+lm_coefs %>%
+  filter(term != "(Intercept)") %>%
+  ggplot(aes(x = term, y = estimate, group = id, col = id)) +
+  geom_hline(yintercept = 0, lty = 3) +
+  geom_line(alpha = 0.3, linewidth = 1.2) +
+  labs(y = "Coefficient", x = NULL) +
+  theme(legend.position = "none") +
+  theme(axis.text.x=element_text(angle=90, hjust=0.5))
+```
+
+## Métricas del rendimiento predictivo en fase de validación cruzada
+
+``` {.r code-line-numbers="2|3|4|5|6|7|8|9|10|11"}
+# Métricas promedio de todas las particiones
+metrics_lm <- 
+  validacion_lm %>%
+  unnest(.predictions) %>%
+  group_by(id) %>%
+  multi_met(truth = `yield`,
+            estimate = `.pred`) %>%
+  group_by(.metric) %>%
+  dplyr::summarise(mean = mean(`.estimate`, na.rm = T),
+            std_err = sd(`.estimate`, na.rm = T),
+            n = n()) %>%
+  ungroup() %>%
+  dplyr::mutate(modelo = "lm")
+metrics_lm
+```
+
+------------------------------------------------------------------------
+
+```{r}
+#| echo: false
+#| comment: ""
+
+# Métricas promedio de todas las particiones
+metrics_lm <- 
+  validacion_lm %>%
+  unnest(.predictions) %>%
+  group_by(id) %>%
+  multi_met(truth = `yield`,
+            estimate = `.pred`) %>%
+  group_by(.metric) %>%
+  dplyr::summarise(mean = mean(`.estimate`, na.rm = T),
+            std_err = sd(`.estimate`, na.rm = T),
+            n = n()) %>%
+  ungroup() %>%
+  dplyr::mutate(modelo = "lm")
+metrics_lm %>% gt()
+```
+
+## Entrenamiento del modelo final
+
+``` {.r code-line-numbers="2|3|4"}
+# Métricas promedio de todas las particiones
+lm_model <- linear_model_spec %>%
+  fit(formula_lm,
+      data = data_train_prep)
+lm_model
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+# Métricas promedio de todas las particiones
+lm_model <- linear_model_spec %>%
+  fit(formula_lm,
+      data = data_train_prep)
+lm_model
+```
+
+------------------------------------------------------------------------
+
+```{r}
+lm_model %>% broom::tidy() %>% gt()
+```
+
+## Testeo interno
+
+### Resumen de la predicción
+
+``` {.r code-line-numbers="1|2|3|4|7|8|10-11"}
+predicciones <- lm_model %>%
+  predict(
+    new_data = data_test_prep,
+    type = "numeric"
+  )
+  
+predicciones_lm <- predicciones %>% 
+  bind_cols(data_test_prep %>% dplyr::select(yield)) %>%
+  dplyr::mutate(modelo = "lm",
+                yield = exp(yield),
+                .pred = exp(.pred))
+
+summary(predicciones_rf)  
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+#### Testeo interno ----
+
+# PREDICCIÓN TEST ----
+# =============================================================================
+predicciones <- lm_model %>%
+  predict(
+    new_data = data_test_prep,
+    type = "numeric"
+  )
+
+# MÉTRICAS TEST ----
+# =============================================================================
+predicciones_lm <- predicciones %>% 
+  bind_cols(data_test_prep %>% dplyr::select(yield)) %>%
+  dplyr::mutate(modelo = "lm",
+                yield = exp(yield),
+                .pred = exp(.pred))
+
+summary(predicciones_lm)
+```
+
+## Testeo interno
+
+### Resumen de las métricas de predicción
+
+``` {.r code-line-numbers="1|2|3|4|5"}
+error_test_lm  <- multi_met(
+  data     = predicciones_lm,
+  truth    = yield,
+  estimate = .pred,
+  na_rm    = TRUE
+) %>%
+  dplyr::mutate(
+    modelo = "lm"
+  )
+error_test_lm
+```
+
+```{r}
+#| echo: false
+#| comment: ""
+
+# Error de test
+
+error_test_lm  <- multi_met(
+  data     = predicciones_lm,
+  truth    = yield,
+  estimate = .pred,
+  na_rm    = TRUE
+) %>%
+  dplyr::mutate(
+    modelo = "lm"
+  )
+error_test_lm
+```
+
+## Testeo interno
+
+```{r}
+#| echo: false
+#| comment: ""
+
+pe1 <- ggplot(
+  data = predicciones_lm,
+  aes(x = yield, y = .pred)
+) +
+  geom_point(alpha = 0.3) +
+  geom_abline(slope = 1, intercept = 0, color = "firebrick") +
+  labs(title = "Valor predicho vs valor real") +
+  theme_bw()
+
+pe2 <- ggplot(
+  data = predicciones_lm,
+  aes(x = 1:nrow(predicciones_lm), y = yield - .pred)
+) +
+  geom_point(alpha = 0.3) +
+  geom_hline(yintercept =  0, color = "firebrick") +
+  labs(title = "Residuos del modelo",
+       x = ".row")   +
+  theme_bw()
+
+pe3 <- ggplot(
+  data = predicciones_lm,
+  aes(x = yield - .pred)
+) +
+  geom_density() + 
+  labs(title = "Distribución residuos del modelo") +
+  theme_bw()
+
+pe4 <- ggplot(
+  data = predicciones_lm,
+  aes(sample = yield - .pred)
+) +
+  geom_qq() +
+  geom_qq_line(color = "firebrick") +
+  labs(title = "Q-Q residuos del modelo") +
+  theme_bw()
+
+ggpubr::ggarrange(plotlist = list(pe1, pe2, pe3, pe4)) %>%
+  ggpubr::annotate_figure(
+    top = ggpubr::text_grob("Distribución residuos", size = 15, face = "bold")
+  )
+```
+
+## Discusión final
+
+::: incremental
+-   Éxito = Conocimiento del Negocio + Conocimiento estadístico + Capacidad de resolver problemas.
+-   Cada modelo necesita de una receta de preprocesamiento adecuada.
+-   Las predicciones deben estar en el mismo dominio que la variable observada.
+-   Muchas variables =\> maldición de la dimensionalidad =\> sobreajuste.
+-   No existe una sola forma de resolver un problema.
+:::
+
+# ¿Preguntas?
